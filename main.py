@@ -26,17 +26,13 @@
 # for i in range (10):
 #     print(next(n))
 
-3
-class Number_1:
-    def __init__(self):
-        self.b=3
-    def __iter__(self):
-        self.b=3
-        print(self.b)
-        return self
-    def __next__(self):
-        self.b *=3
-        return self.b
-n1=iter(Number_1())
+# 3
+
+def gen(number):
+    c=number
+    while True:
+        c *=3
+        yield c
+g=gen(1)
 for i in range(10):
-    print(next(n1))
+    print(next(g))
