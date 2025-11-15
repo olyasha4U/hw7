@@ -28,11 +28,28 @@
 
 # 3
 
-def gen(number):
-    c=number
+# def gen(number):
+#     c=number
+#     while True:
+#         c *=3
+#         yield c
+# g=gen(1)
+# for i in range(10):
+#     print(next(g))
+4
+from random import randint
+alfavit=["a", "b","c","d", "e","f","g","h","i","j","k","l","m","n"]
+number=randint(0,13)
+def gen(num):
+    print(alfavit[num])
     while True:
-        c *=3
-        yield c
-g=gen(1)
-for i in range(10):
-    print(next(g))
+        num +=1
+        yield alfavit[num]
+
+g=gen(number)
+try:
+    for num in range(13):
+        print(next(g))
+except:
+    print("Кінець списку")
+
